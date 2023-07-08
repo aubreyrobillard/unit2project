@@ -26,7 +26,7 @@
 | /restaurant/:id | delete | delete one restaurant by id|
 | /restaurant/new | get    | render form to add new restaurant |
 | /restaurant     | post   | add the new restaurant to main list |
-| /restaurant/:id/edit | get | edit a restaurant from the list by id |
+| /restaurant/:id/edit | get | render form to edit a restaurant from the list by id |
 | /restaurant/:id | put    | add edited changes to restaurant by id |
 
 
