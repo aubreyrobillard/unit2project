@@ -6,7 +6,7 @@
 - [**LINK TO GITHUB**](https://github.com/aubreyrobillard/unit2project.git)
 - [**LINK TO DEPLOYED WEBSITE**](https://aubreyunit2project.onrender.com/)
 - **List of technologies used: html, JS, CSS, Node, Express, EJS, Mongo**
-- [**LINK TO TRELLO**](http://url.com)
+- [**LINK TO TRELLO**](https://trello.com/b/ERG24GYN/unit2project)
 
 
 ## DESCRIPTION:
