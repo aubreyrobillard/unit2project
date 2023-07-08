@@ -1,0 +1,16 @@
+const express = require('express');
+const AnimalModel = require('../models/restaurant');
+
+const router = express.Router();
+
+///////////////////////////////
+/////////// ROUTES ///////////
+//////////////////////////////
+
+// ROUTES
+router.get('/', (req, res) => {
+    res.send('hola world')
+})
+
+
+module.exports = router;
