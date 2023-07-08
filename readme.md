@@ -1,31 +1,35 @@
-# PROJECT 2
+# PROJECT 2: THE TASTIES APP
 
-- **PROJECT NAME:** NAME OF PROJECT
-- **PROJECT BY:** MY NAME
-- [**LINK TO GITHUB**](HTT[://GITHUB.COM])
-- [**LINK TO DEPLOYED WEBSITE**] (HTTP://RENDER.COM)
+
+- **TASTIES**
+- **Aubrey Robillard**
+- [**LINK TO GITHUB**](https://github.com/aubreyrobillard/unit2project.git)
+- [**LINK TO DEPLOYED WEBSITE**](https://aubreyunit2project.onrender.com/)
 - **List of technologies used: html, JS, CSS, Node, Express, EJS, Mongo**
-- [**link to trello**](http://url.com)
+- [**LINK TO TRELLO**](http://url.com)
 
 
-## DESCRIPTION
-"TEXT"
+## DESCRIPTION:
+"Do you struggle remembering that restaurant you went to with your friend last week? When someone asks you where you want to eat, is your response often something like "umm, well, I'm not sure, what are some good places? I have no memory of eating at a restaurant in my entire life!" Well, I have a simple solution for you. With the TASTIES app, users will be able to collect information about their favorite restaurants and store that information in one convenient list. Enjoyed that new sushi place that just opened around the corner? Log it in the app! Add details including the restaurant name, the dishes you ordered, best drinks from the bar, the price range, and a link to the restaurant's website. Also a place to add any notes such as 'celebrated dad's birthday here'."
 
-## MOCK UP OF UI
+## MOCK UP OF UI:
 
-- ![desktop view] (http://imgur.com)
-- ![mobile view] (http://imgur.com)
+- ![desktop view](/images/project%202%20wireframe.png)
 
-## list of backend endpoints
 
-| endpoint | method | purpose |
+## List of Backend Endpoints:
+
+| ENDPOINT | METHOD | PURPOSE |
 |----------|--------|---------|
-| /dog | get | list all dogs |
-| /dog/:id | get | list one dog |
+| /restaurant     | get    | list all restaurants |
+| /restaurant/:id | get    | show one restaurant from list |
+| /restaurant/:id | delete | delete one restaurant by id|
+| /restaurant/new | get    | render form to add new restaurant |
+| /restaurant     | post   | add the new restaurant to main list |
+| /restaurant/:id/edit | get | edit a restaurant from the list by id |
+| /restaurant/:id | put    | add edited changes to restaurant by id |
 
 
-## ERD (entitity relationship diagram)
+## ERD (entitity relationship diagram):
 
-![picture of ERD] (http://imgur.com)
-
-- [free ERD diagram toold](http://dbdiagram.io/home)
+![picture of ERD](/images/ER%20Diagram.png)
