@@ -1,0 +1,26 @@
+<%- include('partials/header.ejs') %>
+<body>
+    <div>
+        <h1><%=restaurant.name%></h1>
+
+        Cuisine: <%= restaurant.cuisine %>
+        <br>
+        Price Range: <%= restaurant.dollarPrice %>
+        <br>
+        Dishes: <%= restaurant.dishes %>
+        <br>
+        Drinks: <%= restaurant.drinks %>
+        <br>
+        Notes: <%= restaurant.notes %>
+        <br>
+        <a href="<%= restaurant.restaurantLink %>">Restaurant Website Link</a>
+    </div>
+
+    <a href="/restaurants"><button>Back to List</button></a>
+    <a href="/restaurants/homepage"><button>Homepage</button></a>
+    <a href="/restaurants/:id/edit"><button>Edit</button></a>
+    <form>
+
+    </form>
+</body>
+</html>

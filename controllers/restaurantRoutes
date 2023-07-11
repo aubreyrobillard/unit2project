@@ -1,16 +1,16 @@
 const express = require('express');
-const AnimalModel = require('../models/restaurant');
 const RestaurantModel = require('../models/restaurant');
 
 const router = express.Router();
 
 ///////////////////////////////
-/////////// ROUTES ///////////
-//////////////////////////////
+/////////// ROUTES ////////////
+///////////////////////////////
 
 // router.get('/', (req, res) => {
 //     res.send('hola world')
 // })
+
 
 // homepage route //
     router.get('/homepage', (req, res) => {
@@ -43,10 +43,32 @@ const router = express.Router();
     router.delete('/:id', async (req, res) => {
         const id = req.params.id
 
-        await RestaurantModel.findByIdAndDelete({id})
+        await RestaurantModel.findByIdAndDelete(id)
         
         res.redirect('/animals')
     })
 
+// show a single restaurant with details
+    router.get('/:id', async (req, res) => {
+        // create id variable
+        const id = req.params.id;
+        
+        // find restaurant by id created above
+        const restaurant = await RestaurantModel.findById(id);
+
+
+        // tryinging to get numbers to log as $$$
+        if(restaurant.priceRange === 3){
+            restaurant.dollarPrice = "$$$"
+        } else if(restaurant.priceRange === 2){
+            restaurant.dollarPrice = "$$"
+        } else{
+            restaurant.dollarPrice = "$"
+        };
+
+
+        // render the show page
+        res.render('show.ejs', {restaurant} )
+    });
 
 module.exports = router;
