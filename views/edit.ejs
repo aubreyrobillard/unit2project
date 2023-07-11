@@ -6,6 +6,22 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Edit the <%=restaurant.name%></h1>
+        <dev>
+            
+            <form action="/restaurants/<%=restaurant._id%>?_method='PUT" method="POST"></label>
+                <fieldset>
+                    <label>Name: <input type="text" name="name" value="<%=restaurant.name%>"></label>
+                    <label>Cuisine: <input type="text" name="cuisine" value="<%=restaurant.cuisine%>"></label>
+                    <label>PriceRange: <input type="number" name="priceRange" value="<%=restaurant.priceRange%>"></label>
+                    <label>Website: <input type="text" name="restaurantLink" value="<%=restaurant.restaurantLink%>"></label>
+                    <label>Dishes: <input type="text" name="dishes" value="<%=restaurant.dishes%>"></label>
+                    <label>Drinks: <input type="text" name="drinks" value="<%=restaurant.drinks%>"></label>
+                    <label>Notes: <input type="text" name="notes" value="<%=restaurant.notes%>"></label>
+                </fieldset>
+            </form>
+
+        </dev>
+   
 </body>
 </html>

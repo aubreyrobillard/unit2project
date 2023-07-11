@@ -9,13 +9,13 @@
     <div>
         <% for(restaurant of restaurants) { %>
             <article>
-                <a href="/restaurant/<%=restaurant._id%>"><%=restaurant.name%></a>
+                <a href="/restaurants/<%=restaurant._id%>"><%=restaurant.name%></a>
                 <!-- Aubrey look at this because you did it wrong the first time -->
             </article>
         <% } %>
     </div>
-    <a href="/restaurants"><button>Back to List</button></a>
-    <br>
     <a href="/restaurants/homepage"><button>Back to Homepage</button></a>
+    <br>
+    <a href="/restaurant/new"><button>Add a Restaurant</button></a>
 </body>
 </html>
