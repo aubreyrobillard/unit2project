@@ -1,8 +1,12 @@
 const mongoose = require('./connection');
 
 const restaurantSchema = new mongoose.Schema ({
-    name: String,
-    priceRange: Boolean,
+    name: {
+        type: String,
+        required: true,
+    },
+    cuisine: String,
+    priceRange: Number,
     restaurantLink: String,
     dishes: String,
     drinks: String,
@@ -12,4 +16,3 @@ const restaurantSchema = new mongoose.Schema ({
 const RestaurantModel = mongoose.model('restaurant', restaurantSchema);
 
 module.exports = RestaurantModel;
-

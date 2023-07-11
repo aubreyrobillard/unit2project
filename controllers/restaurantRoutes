@@ -1,5 +1,6 @@
 const express = require('express');
 const AnimalModel = require('../models/restaurant');
+const RestaurantModel = require('../models/restaurant');
 
 const router = express.Router();
 
@@ -7,10 +8,35 @@ const router = express.Router();
 /////////// ROUTES ///////////
 //////////////////////////////
 
-// ROUTES
-router.get('/', (req, res) => {
-    res.send('hola world')
+// router.get('/', (req, res) => {
+//     res.send('hola world')
+// })
+
+// index //
+// router.get('/homepage', (req, res) => {
+//     res.render('homepage.ejs')
+// })
+
+
+router.get('/', async (req, res) => {
+    
+    const allRestaurants = await RestaurantModel.find({})
+    
+    res.render('index.ejs', {restaurants: allRestaurants})
 })
+
+// // edit //
+// router.get('/:id/edit', (req, res) => {
+//     const id = req.params.id;
+//     res.render('edit.ejs')
+// })
+
+
+// // new //
+// router.get('/new', (req, res) => {
+//     res.render('new.ejs')
+// })
+
 
 
 module.exports = router;
