@@ -26,17 +26,56 @@ const router = express.Router();
         res.render('index.ejs', {restaurants: allRestaurants})
     })
 
-// edit route //
-    router.get('/:id/edit', (req, res) => {
-        const id = req.params.id;
-        res.render('edit.ejs')
-    })
 
-
-// new restaurant route//
+// new restaurant route //
     router.get('/new', (req, res) => {
         res.render('new.ejs')
     })
+
+// new restaurant post route //
+    router.post('/', async (req, res) => {
+        await RestaurantModel.create(req.body);
+
+        res.redirect('/restaurants')
+    })
+
+// edit route //
+    router.get('/:id/edit', async (req, res) => {
+        const id = req.params.id;
+        const restaurant = await RestaurantModel.findById(id)
+        res.render('edit.ejs', {restaurant})
+    })
+
+
+// edit put route //
+    router.put('/:id', async (req, res) => {
+        const id = req.params.id;
+        // const updatedRestaurant = req.body
+        // console.log({updatedRestaurant, req}, "before updated by id") saving to reference de-bugging
+        await RestaurantModel.findByIdAndUpdate(id, req.body)
+        // console.log(updatedResult, "after updated by id")
+
+        res.redirect('/restaurants')
+    })
+
+
+// show a single restaurant with details
+    router.get('/:id', async (req, res) => {
+        const id = req.params.id;
+        
+        const restaurant = await RestaurantModel.findById(id);
+
+        if(restaurant.priceRange === 3){
+            restaurant.dollarPrice = "$$$"
+        } else if(restaurant.priceRange === 2){
+            restaurant.dollarPrice = "$$"
+        } else{
+            restaurant.dollarPrice = "$"
+        };
+
+        res.render('show.ejs', {restaurant} )
+    });
+
 
 
 // delete a restaurant //
@@ -48,27 +87,6 @@ const router = express.Router();
         res.redirect('/animals')
     })
 
-// show a single restaurant with details
-    router.get('/:id', async (req, res) => {
-        // create id variable
-        const id = req.params.id;
-        
-        // find restaurant by id created above
-        const restaurant = await RestaurantModel.findById(id);
 
-
-        // tryinging to get numbers to log as $$$
-        if(restaurant.priceRange === 3){
-            restaurant.dollarPrice = "$$$"
-        } else if(restaurant.priceRange === 2){
-            restaurant.dollarPrice = "$$"
-        } else{
-            restaurant.dollarPrice = "$"
-        };
-
-
-        // render the show page
-        res.render('show.ejs', {restaurant} )
-    });
 
 module.exports = router;

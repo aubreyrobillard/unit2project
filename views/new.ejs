@@ -6,10 +6,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Edit the <%=restaurant.name%></h1>
-        <dev>
-            
-            <form action="/restaurants" method="POST"></label>
+    <h1>Add a Restaurant</h1>
+        <div>
+            <form action="/restaurants" method="POST">
                 <fieldset>
                     <label>Name: <input type="text" name="name" placeholder="Name"></label>
                     <label>Cuisine: <input type="text" name="cuisine" placeholder="Cuisine"></label>
@@ -18,10 +17,12 @@
                     <label>Dishes: <input type="text" name="dishes" placeholder="Dishes"></label>
                     <label>Drinks: <input type="text" name="drinks" placeholder="Drinks"></label>
                     <label>Notes: <input type="text" name="notes" placeholder="Anthing Else?"></label>
+                    <br>
+                    <input type="submit" value="Add">
                 </fieldset>
             </form>
 
-        </dev>
+        </div>
    
 </body>
 </html>
