@@ -29,7 +29,7 @@
 | /restaurant/:id/edit | get | render form to edit a restaurant from the list by id |
 | /restaurant/:id | put    | add edited changes to restaurant by id |
 
-** add authorization routes to chart ^^
+** add authorization and homepage routes to chart ^^
 
 ## ERD (entitity relationship diagram):
 
