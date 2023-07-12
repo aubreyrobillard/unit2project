@@ -84,7 +84,7 @@ const router = express.Router();
 
         await RestaurantModel.findByIdAndDelete(id)
         
-        res.redirect('/animals')
+        res.redirect('/restaurants')
     })
 
 
