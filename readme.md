@@ -34,3 +34,9 @@
 ## ERD (entitity relationship diagram):
 
 ![picture of ERD](/images/ER%20Diagram.png)
+
+## Future Enhancements:
+- Users will have an option to choose price range by using checkboxes to seletect $, $$, or $$, instead of inputing a number 1-3.
+- Create error page to populate when user runs into an error while using app
+- Users can search for a restaurant name using a search bar
+- Users will be able to filter restaurants based on specific elements such as price or cuisine type

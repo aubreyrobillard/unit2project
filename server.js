@@ -1,21 +1,38 @@
-// DEPORT DEPENDENCIES
+// DEPORT DEPENDENCIES //
 require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('./models/connection');
 const RestaurantRouter = require('./controllers/restaurantRoutes');
+const UserRouter = require('./controllers/userRoutes')
 const methodOverride = require('method-override');
+const MongoStore = require('connect-mongo');
+const session = require('express-session')
 
-// EXPRESS APPLICATION
+// EXPRESS APPLICATION //
 const app = express();
 
-// MIDDLEWARE
+// MIDDLEWARE //
 app.use(morgan('dev')); //logging
 app.use(methodOverride('_method')); //override with POST having ?_method=DELETE or ?_method=PUT
 app.use(express.static('public')); //serve static files from public folder
 app.use(express.urlencoded({extended:true})) //this is how you gain access to req.body
+app.use(session({
+    secret: process.env.SECRET,
+    resave: false,
+    saveUninitialized: true,
+    store: MongoStore.create({mongoUrl: process.env.DATABASE_URL}),
+}))
 
 app.use('/restaurants', RestaurantRouter);
+app.use('/user', UserRouter);
+
+
+
+// ROUTES //
+app.get('/', (req, res) => {
+    res.render('homepage.ejs')
+})
 
 
 // LISTENER

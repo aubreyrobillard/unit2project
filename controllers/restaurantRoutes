@@ -3,6 +3,20 @@ const RestaurantModel = require('../models/restaurant');
 
 const router = express.Router();
 
+
+//// middleware ////
+// this code checks to see if the user is logged in using the req.session.loggedIn property. This property was defined in the controller.user.js file
+// if the user is logged in, we're using the 'next' which means allows the user to access the routes defined below 
+router.use((req, res, next) => {
+    // req.session
+    if(req.session.loggedIn){
+        next();
+    } else {
+        res.redirect('/user/login')
+    }
+})
+
+
 ///////////////////////////////
 /////////// ROUTES ////////////
 ///////////////////////////////
@@ -12,10 +26,10 @@ const router = express.Router();
 // })
 
 
-// homepage route //
-    router.get('/homepage', (req, res) => {
-        res.render('homepage.ejs')
-    })
+// // homepage route //
+//     router.get('/homepage', (req, res) => {
+//         res.render('homepage.ejs')
+//     })
 
 
 // index route //
@@ -23,13 +37,13 @@ const router = express.Router();
         
         const allRestaurants = await RestaurantModel.find({})
         
-        res.render('index.ejs', {restaurants: allRestaurants})
+        res.render('restaurants/index.ejs', {restaurants: allRestaurants})
     })
 
 
 // new restaurant route //
     router.get('/new', (req, res) => {
-        res.render('new.ejs')
+        res.render('restaurants/new.ejs')
     })
 
 // new restaurant post route //
@@ -43,7 +57,7 @@ const router = express.Router();
     router.get('/:id/edit', async (req, res) => {
         const id = req.params.id;
         const restaurant = await RestaurantModel.findById(id)
-        res.render('edit.ejs', {restaurant})
+        res.render('restaurants/edit.ejs', {restaurant})
     })
 
 
@@ -73,7 +87,7 @@ const router = express.Router();
             restaurant.dollarPrice = "$"
         };
 
-        res.render('show.ejs', {restaurant} )
+        res.render('restaurants/show.ejs', {restaurant} )
     });
 
 
