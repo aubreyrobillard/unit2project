@@ -4,17 +4,18 @@
 <%- include('../partials/header.ejs') %>
 
 <body>
-    <h1> The TASTIES List </h1>
+    <h2>Your TASTIES List</h2>
+    <h3>Viewing Results for <%=user%></h3>
 
     <div>
         <% for(restaurant of restaurants) { %>
             <article>
-                <a href="/restaurants/<%=restaurant._id%>"><%=restaurant.name%></a>
+                <a href="/restaurants/<%=restaurant._id%>"><h2><%=restaurant.name%></h2></a>
                 <!-- Aubrey look at this because you did it wrong the first time -->
             </article>
         <% } %>
     </div>
-    <a href="/user/logout"><button>Log Out</button></a>
+    
     <br>
     <a href="/restaurants/new"><button>Add a Restaurant</button></a>
 </body>

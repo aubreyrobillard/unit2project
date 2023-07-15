@@ -29,8 +29,8 @@ router.use((req, res, next) => {
 // index route //
     router.get('/', async (req, res) => {
         const allRestaurants = await RestaurantModel.find({username: req.session.username})
-        
-        console.log("req.session.username", req.session.username);
+    
+        // console.log("req.session.username", req.session.username);
 
         res.render(
             './restaurants/index.ejs', 
@@ -46,7 +46,7 @@ router.use((req, res, next) => {
 
 // new restaurant post route //
     router.post('/', async (req, res) => {
-        console.log("username", req.session.username);
+        // console.log("username", req.session.username);
         
         req.body.username = req.session.username;
         
@@ -72,7 +72,7 @@ router.use((req, res, next) => {
         await RestaurantModel.findByIdAndUpdate(id, req.body)
         // console.log(updatedResult, "after updated by id")
 
-        res.redirect('/restaurants')
+        res.redirect(`/restaurants/${id}`) //// MY FAVORITE LINE OF CODE /////
     })
 
 
@@ -86,8 +86,10 @@ router.use((req, res, next) => {
             restaurant.dollarPrice = "$$$"
         } else if(restaurant.priceRange === 2){
             restaurant.dollarPrice = "$$"
-        } else{
+        } else if(restaurant.priceRange === 1){
             restaurant.dollarPrice = "$"
+        } else{
+            restaurant.dollarPrice = ""
         };
 
         res.render('./restaurants/show.ejs', {restaurant} )

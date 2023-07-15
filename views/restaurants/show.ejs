@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs') %>
 <body>
     <div>
-        <h1><%=restaurant.name%></h1>
+        <h2><%=restaurant.name%></h2>
 
         Cuisine: <%= restaurant.cuisine %>
         <br>
@@ -17,7 +17,7 @@
     </div>
 
     <a href="/restaurants"><button>Back to List</button></a>
-    <a href="/restaurants/homepage"><button>Homepage</button></a>
+  
     <a href="/restaurants/<%=restaurant._id%>/edit"><button>Edit</button></a>
     
     <form action="/restaurants/<%=restaurant._id%>?_method=DELETE" method="POST">
