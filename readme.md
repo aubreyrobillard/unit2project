@@ -5,7 +5,7 @@
 - **Aubrey Robillard**
 - [**LINK TO GITHUB**](https://github.com/aubreyrobillard/unit2project.git)
 - [**LINK TO DEPLOYED WEBSITE**](https://aubreyunit2project.onrender.com/)
-- **List of technologies used: html, JS, CSS, Node, Express, EJS, Mongo**
+- **List of technologies used: html, JS, CSS, Node, Express, EJS, Mongo, jQuery**
 - [**LINK TO TRELLO**](https://trello.com/b/ERG24GYN/unit2project)
 
 
@@ -14,7 +14,8 @@
 
 ## Mock Up of UI:
 
-- ![desktop view](/images/project%202%20wireframe.png)
+- ![signup/login](/images//Signup%3Alogin%20wireframe.png)
+- ![website](/images/project%202%20wireframe.png)
 
 
 ## List of Backend Endpoints:
@@ -34,7 +35,6 @@
 | /restaurant/:id/edit | get | render form to edit a restaurant from the list by id |
 | /restaurant/:id | put    | add edited changes to restaurant by id |
 
-** add authorization and homepage routes to chart ^^
 
 ## ERD (entitity relationship diagram):
 
@@ -45,3 +45,4 @@
 - Create error ejs pages to populate when user runs into an error while using app
 - Users can search for a restaurant name using a search bar
 - Users will be able to filter restaurants based on specific elements such as price or cuisine type
+- Options for users to have and manage a profile page

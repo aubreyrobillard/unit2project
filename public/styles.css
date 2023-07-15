@@ -16,7 +16,7 @@ body {
 h2 {
     color: yellow;
     margin: 0;
-    font-size: 30t;
+    font-size: 25pt;
 }
 h1 {
     margin: 2pt;
@@ -34,13 +34,13 @@ fieldset{
     flex-direction: column;
     gap: 5pt;
     border: 0;
-    font-size: 25pt;
+    font-size: 20pt;
     font-family: 'Belanosima', sans-serif;
 }
 div {
     background-color: rgba(78, 76, 76, 0.9);
     border: 0;
-    font-size: 30pt;
+    font-size: 20pt;
     /* margin: 10pt; */
     font-family: 'Belanosima', sans-serif;
     margin: 15pt;
