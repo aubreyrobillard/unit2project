@@ -85,4 +85,7 @@ button {
     fieldset {
         font-family: 'Quicksand', sans-serif;
     }
+    .heading {
+        font-size: 22pt;
+    }
 }
