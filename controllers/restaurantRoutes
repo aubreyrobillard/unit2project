@@ -26,11 +26,6 @@ router.use((req, res, next) => {
 // })
 
 
-// // homepage route //
-//     router.get('/homepage', (req, res) => {
-//         res.render('homepage.ejs')
-//     })
-
 
 // index route //
     router.get('/', async (req, res) => {

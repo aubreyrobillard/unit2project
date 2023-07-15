@@ -30,7 +30,7 @@ app.use('/user', UserRouter);
 
 
 // ROUTES //
-app.get('/', (req, res) => {
+app.get('/homepage', (req, res) => {
     res.render('homepage.ejs')
 })
 
