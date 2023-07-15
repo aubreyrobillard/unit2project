@@ -10,7 +10,8 @@ const restaurantSchema = new mongoose.Schema ({
     restaurantLink: String,
     dishes: String,
     drinks: String,
-    notes: String
+    notes: String,
+    username: String,
 });
 
 const RestaurantModel = mongoose.model('restaurant', restaurantSchema);

@@ -22,7 +22,7 @@ const router = express.Router();
         
         } catch {
             
-            res.render(error.ejs)
+            res.send("This username already exists")
         }
     })
 
@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
         if(passmatches){
             req.session.username = req.body.username;
             req.session.loggedIn = true;
-            res.redirect('/restaurants');
+            res.redirect('/restaurants'); 
         } else {
             res.send('The password entered does not match this username')
         };

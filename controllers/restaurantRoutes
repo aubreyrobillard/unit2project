@@ -26,33 +26,41 @@ router.use((req, res, next) => {
 // })
 
 
-
 // index route //
     router.get('/', async (req, res) => {
+        const allRestaurants = await RestaurantModel.find({username: req.session.username})
         
-        const allRestaurants = await RestaurantModel.find({})
-        
-        res.render('restaurants/index.ejs', {restaurants: allRestaurants})
-    })
+        console.log("req.session.username", req.session.username);
+
+        res.render(
+            './restaurants/index.ejs', 
+            {restaurants: allRestaurants, user: req.session.username},
+        )
+    });
 
 
 // new restaurant route //
     router.get('/new', (req, res) => {
-        res.render('restaurants/new.ejs')
+        res.render('./restaurants/new.ejs')
     })
 
 // new restaurant post route //
     router.post('/', async (req, res) => {
+        console.log("username", req.session.username);
+        
+        req.body.username = req.session.username;
+        
         await RestaurantModel.create(req.body);
 
         res.redirect('/restaurants')
+
     })
 
 // edit route //
     router.get('/:id/edit', async (req, res) => {
         const id = req.params.id;
         const restaurant = await RestaurantModel.findById(id)
-        res.render('restaurants/edit.ejs', {restaurant})
+        res.render('./restaurants/edit.ejs', {restaurant})
     })
 
 
@@ -82,7 +90,7 @@ router.use((req, res, next) => {
             restaurant.dollarPrice = "$"
         };
 
-        res.render('restaurants/show.ejs', {restaurant} )
+        res.render('./restaurants/show.ejs', {restaurant} )
     });
 
 

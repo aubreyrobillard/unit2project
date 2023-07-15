@@ -1,16 +1,15 @@
 // DEPORT DEPENDENCIES //
 require('dotenv').config();
 const express = require('express');
+const app = express();
 const morgan = require('morgan');
 const mongoose = require('./models/connection');
 const RestaurantRouter = require('./controllers/restaurantRoutes');
 const UserRouter = require('./controllers/userRoutes')
 const methodOverride = require('method-override');
-const MongoStore = require('connect-mongo');
 const session = require('express-session')
+const MongoStore = require('connect-mongo');
 
-// EXPRESS APPLICATION //
-const app = express();
 
 // MIDDLEWARE //
 app.use(morgan('dev')); //logging
@@ -40,3 +39,4 @@ PORT = process.env.PORT;
 app.listen(PORT, (req, res) => {
     console.log(`LISTENING ON PORT ${PORT}`)
 })
+
