@@ -24,43 +24,40 @@ const router = express.Router();
             
             res.send("This username already exists")
         }
-    })
+    });
 
 
 //login route //
-    try{
-        router.get('/login', (req, res) => {
+    router.get('/login', (req, res) => {
         res.render('users/login.ejs')
-        })
-    } catch {
-        console.log("look here for error", error)
-    }
+    });
+ 
 
 // login post route //
-router.post('/login', async (req, res) => {
-    // res.send('login') used this in setup w/ mongo
-    const user = await UserModel.findOne({ username: req.body.username })
-    if(!user) {
-        res.send('This user does not exist. Please signup for an account')
-    } else {
-        const passmatches = bcrypt.compareSync(req.body.password, user.password)
-        if(passmatches){
-            req.session.username = req.body.username;
-            req.session.loggedIn = true;
-            res.redirect('/restaurants'); 
+    router.post('/login', async (req, res) => {
+        // res.send('login') used this in setup w/ mongo
+        const user = await UserModel.findOne({ username: req.body.username })
+        if(!user) {
+            res.send('This user does not exist. Please signup for an account')
         } else {
-            res.send('The password entered does not match this username')
-        };
-    }
-});
+            const passmatches = bcrypt.compareSync(req.body.password, user.password)
+            if(passmatches){
+                req.session.username = req.body.username;
+                req.session.loggedIn = true;
+                res.redirect('/restaurants'); 
+            } else {
+                res.send('The password entered does not match this username')
+            };
+        }
+    });
 
 
 // route to destroy the session and have the use redirect to /homepage route
-router.get('/logout', (req, res) => {
-    req.session.destroy(err => {
-        res.redirect('/homepage');
-    })
-})
+    router.get('/logout', (req, res) => {
+        req.session.destroy(err => {
+            res.redirect('/homepage');
+        })
+    });
 
 
 module.exports = router;
