@@ -75,7 +75,7 @@ router.use((req, res, next) => {
         await RestaurantModel.findByIdAndUpdate(id, req.body)
         // console.log(updatedResult, "after updated by id")
 
-        res.redirect(`/restaurants/${id}`) //// MY FAVORITE LINE OF CODE /////
+        res.redirect(`/restaurants/${id}`) 
     })
 
 
