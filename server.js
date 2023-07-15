@@ -29,7 +29,7 @@ app.use('/user', UserRouter);
 
 
 // ROUTES //
-app.get('/homepage', (req, res) => {
+app.get('/', (req, res) => {
     res.render('homepage.ejs')
 })
 
