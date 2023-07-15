@@ -41,12 +41,12 @@ router.use((req, res, next) => {
 
 // new restaurant route //
     router.get('/new', (req, res) => {
+        // console.log(user)
         res.render('./restaurants/new.ejs')
     })
 
 // new restaurant post route //
     router.post('/', async (req, res) => {
-        // console.log("username", req.session.username);
         
         try{
             req.body.username = req.session.username;

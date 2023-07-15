@@ -55,7 +55,7 @@ const router = express.Router();
 // route to destroy the session and have the use redirect to /homepage route
     router.get('/logout', (req, res) => {
         req.session.destroy(err => {
-            res.redirect('/homepage');
+            res.redirect('/');
         })
     });
 

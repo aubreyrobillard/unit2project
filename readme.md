@@ -25,7 +25,7 @@
 | /user/signup    | post   | create account on database to use for login |
 | /user/login     | get    | render login page |
 | /user/login     | post   | login to account kept in database |
-| /homepage       | get    | display homepage |
+| /               | get    | display homepage |
 | /restaurant     | get    | list all restaurants |
 | /restaurant/:id | get    | show one restaurant from list |
 | /restaurant/:id | delete | delete one restaurant by id|

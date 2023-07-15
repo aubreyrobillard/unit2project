@@ -7,12 +7,12 @@
 <body>
    
     <div>
-        <h2>Your TASTIES List</h2>
+        <h2>Your TASTIES List:</h2>
     </div>
     <div>
         <% for(restaurant of restaurants) { %>
             <article>
-                <a href="/restaurants/<%=restaurant._id%>"><h2><%=restaurant.name%></h2></a>
+                <a href="/restaurants/<%=restaurant._id%>"><h3><%=restaurant.name%></h3></a>
                 <!-- Aubrey look at this because you did it wrong the first time -->
             </article>
         <% } %>
