@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <%- include('../partials/homepageHeader.ejs') %>
 </head>
 <body>
     
     <div id="signup-form">
         <form action="/user/signup" method="POST">
-            <h1>Sign up for TASTIES!</h1>
+            <h2>Sign up for TASTIES!</h2>
             <h6>*required field</h6>
             *First Name: <input type="text" name="firstName" placeholder="First name">
             <br>
@@ -19,8 +17,13 @@
             <br>
             *Password: <input type="password" name="password" placeholder="password">
             <br>
-            <input type="submit" name="Sign Up!">
+            <input type="submit" value="Sign Up!">
         </form>
+    </div>
+
+    <div>
+        <h3>Already Have an Account?</h3>
+        <a href="/user/login"><button>Login</button></a>
     </div>
 </body>
 </html>

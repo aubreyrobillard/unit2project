@@ -3,10 +3,13 @@
 
 <%- include('../partials/header.ejs') %>
 
-<body>
-    <h2>Your TASTIES List</h2>
-    <h3>Viewing Results for <%=user%></h3>
 
+<body>
+   
+    <div>
+        <h2>Your TASTIES List</h2>
+        <h3>Viewing Results for <%=user%></h3>
+    </div>
     <div>
         <% for(restaurant of restaurants) { %>
             <article>
@@ -15,8 +18,9 @@
             </article>
         <% } %>
     </div>
-    
-    <br>
-    <a href="/restaurants/new"><button>Add a Restaurant</button></a>
+    <div>
+        <a href="/restaurants/new"><button>Add a Restaurant</button></a>
+    </div>
+   
 </body>
 </html>

@@ -1,0 +1,55 @@
+
+.heading {
+    color: rgb(235, 241, 244);
+    font-family: 'Bungee Shade', cursive;
+}
+body {
+    margin: 5pt 80pt 5pt 80pt;
+    background-image: url(./images/StockSnap_KQ2X08KXAB.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+};
+
+form {
+    background-color: rgb(96, 96, 96, 0.8);
+    font-family: 'Amatic SC', cursive;
+
+}
+fieldset{
+    display: flex;
+    flex-direction: column;
+    gap: 5pt;
+    border: 0;
+    font-size: 25pt;
+    font-family: 'Amatic SC', cursive;
+}
+div {
+    background-color: rgba(78, 76, 76, 0.8);
+    border: 0;
+    font-size: 30pt;
+    /* margin: 10pt; */
+    font-family: 'Amatic SC', cursive;
+}
+
+a:link {
+    text-decoration: none;
+    color: pink;
+}
+h2 {
+    color: yellow;
+    margin-bottom: 1pt;
+}
+h1 {
+    margin: 5pt;
+}
+h3 {
+    margin: 2pt;
+}
+button {
+    font-size: 12pt;
+    font-family: 'Quicksand', sans-serif;
+
+}

@@ -48,13 +48,16 @@ router.use((req, res, next) => {
     router.post('/', async (req, res) => {
         // console.log("username", req.session.username);
         
-        req.body.username = req.session.username;
+        try{
+            req.body.username = req.session.username;
         
-        await RestaurantModel.create(req.body);
+            await RestaurantModel.create(req.body);
 
-        res.redirect('/restaurants')
-
-    })
+            res.redirect('/restaurants')
+        } catch {
+            res.send("Restaurant Name is required")
+        };
+    });
 
 // edit route //
     router.get('/:id/edit', async (req, res) => {
